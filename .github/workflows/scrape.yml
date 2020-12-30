@@ -1,0 +1,46 @@
+name: Scrape latest data
+
+on:
+  push:
+  workflow_dispatch:
+  schedule:
+    - cron:  '6,26,46 * * * *'
+
+jobs:
+  scheduled:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out this repo
+      uses: actions/checkout@v2
+    - name: Fetch nfl injury data
+      run: |-
+        curl https://iis2.donbest.com/nfl/injuries/ > nfl-injuries.html
+    - name: Fetch ncaaf injury data
+      run: |-
+        curl https://iis2.donbest.com/ncaaf/injuries/ > ncaaf-injuries.html
+    - name: Fetch wnba injury data
+      run: |-
+        curl https://iis2.donbest.com/wnba/injuries/ > wnba-injuries.html
+    - name: Fetch nba injury data
+      run: |-
+        curl https://iis2.donbest.com/nba/injuries/ > nba-injuries.html
+    - name: Fetch mlb injury data
+      run: |-
+        curl https://iis2.donbest.com/mlb/injuries/ > mlb-injuries.html
+    - name: Fetch nhl injury data
+      run: |-
+        curl https://iis2.donbest.com/nhl/injuries/ > nhl-injuries.html
+    - name: Fetch ncaab injury data
+      run: |-
+        curl https://iis2.donbest.com/ncaab/injuries/ > ncaab-injuries.html
+    - name: Fetch cfl injury data
+      run: |-
+        curl https://iis2.donbest.com/cfl/injuries/ > cfl-injuries.html
+    - name: Commit and push if it changed
+      run: |-
+        git config user.name "Automated"
+        git config user.email "actions@users.noreply.github.com"
+        git add -A
+        timestamp=$(date -u)
+        git commit -m "Latest data: ${timestamp}" || exit 0
+        git push
