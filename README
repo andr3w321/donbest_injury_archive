@@ -1,3 +1,13 @@
 Inspired by https://simonwillison.net/2020/Oct/9/git-scraping/
 
 Scrapes donbest injury data every 20 mins from legacy site https://iis2.donbest.com/nfl/injuries/ for nfl, ncaaf, wnba, nba, mlb, nhl, ncaab, cfl and commits changes to git log. Data starts on 12-29-2020.
+
+View the latest pages at
+https://andr3w321.github.io/donbest_injury_archive/nfl-injuries.html
+https://andr3w321.github.io/donbest_injury_archive/ncaaf-injuries.html
+https://andr3w321.github.io/donbest_injury_archive/cfl-injuries.html
+https://andr3w321.github.io/donbest_injury_archive/wnba-injuries.html
+https://andr3w321.github.io/donbest_injury_archive/ncaab-injuries.html
+https://andr3w321.github.io/donbest_injury_archive/nba-injuries.html
+https://andr3w321.github.io/donbest_injury_archive/nhl-injuries.html
+https://andr3w321.github.io/donbest_injury_archive/mlb-injuries.html
